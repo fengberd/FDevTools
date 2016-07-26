@@ -1,0 +1,16 @@
+name: FDevTools
+main: moe.berd.FDevTools.Main
+version: "1.0.0"
+api: ["1.0.0"]
+load: STARTUP
+author: FENGberd
+description: "An developer's tools to debug easily!"
+commands:
+  makeplugin:
+    description: Make plugin into jar file
+    usage: "/makeplugin <Name> [Re-Compile=false]"
+    permission: FDevTools.command.makeplugin
+permissions:
+  FDevTools.command.makeplugin:
+    description: "Makeplugin command permission"
+    default: op
