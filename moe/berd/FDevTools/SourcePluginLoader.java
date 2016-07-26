@@ -30,7 +30,7 @@ public class SourcePluginLoader implements PluginLoader
 	{
 		this.server=server;
 		this.plugin=Main.getInstance();
-		this.compiler=Main.getInstance().checkCompiler();
+		this.compiler=this.plugin.getCompiler();
 		this.filemanager=this.compiler.getStandardFileManager(null,null,null);
 	}
 	

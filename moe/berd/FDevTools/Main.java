@@ -16,7 +16,6 @@ public class Main extends PluginBase
 	private static Main obj=null;
 	
 	private JavaCompiler compiler=null;
-	private SourcePluginLoader loader=null;
 	
 	public static Main getInstance()
 	{
@@ -62,13 +61,14 @@ public class Main extends PluginBase
 					{
 						sender.sendMessage("[FDevTools] "+TextFormat.RED+"Plugin not exists,check your plugin name");
 					}
-					else if(plugin.getPluginLoader()!=this.loader)
+					else if(plugin.getPluginLoader().getClass()!=SourcePluginLoader.class)
 					{
 						sender.sendMessage("[FDevTools] "+TextFormat.RED+"Plugin isn't loaded by FDevTools");
 					}
 					else
 					{
-						File dir=this.loader.getPluginPath(plugin);
+						SourcePluginLoader loader=(SourcePluginLoader)plugin.getPluginLoader();
+						File dir=loader.getPluginPath(plugin);
 						if(dir==null)
 						{
 							sender.sendMessage("[FDevTools] "+TextFormat.RED+"Can't find plugin source path!");
@@ -80,7 +80,7 @@ public class Main extends PluginBase
 							if(args.length>=2 && args[1].toLowerCase().equals("true"))
 							{
 								sender.sendMessage("[FDevTools] "+TextFormat.AQUA+"Re-compiling source...");
-								if(!this.loader.compilePlugin(dir,class_file))
+								if(!loader.compilePlugin(dir,class_file))
 								{
 									sender.sendMessage("[FDevTools] "+TextFormat.RED+"Can't compile plugin source!");
 									break;
@@ -166,6 +166,11 @@ public class Main extends PluginBase
 			return false;
 		}
 		return true;
+	}
+	
+	public JavaCompiler getCompiler()
+	{
+		return this.compiler;
 	}
 	
 	@SuppressWarnings("unchecked")
