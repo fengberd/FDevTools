@@ -1,6 +1,9 @@
 # FDevTools
 The first devtools plugin for Nukkit!
 
+# Download
+You can get compiled jar file from [ZXDA's Jenkins](https://jenkins.zxda.net/view/Nukkit/job/FDevTools/)
+
 # Feathres
 * You can load plugin in source(*.java).
 * If you don't have JDK,just download tools.jar from [Here](https://www.dropbox.com/s/vjvcebljpk6qlmj/tools.jar?dl=0) and put it into FDevTools folder then it works well too.
