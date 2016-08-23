@@ -1,5 +1,6 @@
 # FDevTools
-The first devtools plugin for Nukkit!
+__The first devtools plugin for Nukkit!__
+
 [![Jenkins](https://img.shields.io/jenkins/s/https/jenkins.zxda.net/FDevTools.svg)](https://jenkins.zxda.net/FDevTools)
 
 # Download
