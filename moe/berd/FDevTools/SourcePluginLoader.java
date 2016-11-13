@@ -49,7 +49,7 @@ public class SourcePluginLoader implements PluginLoader
 				this.plugin.getLogger().info(TextFormat.AQUA+"Loading source plugin \""+description.getName()+"\"");
 				File class_file=new File(dir.getAbsolutePath()+"/src_compile");
 				this.compilePlugin(dir,class_file);
-				SourcePluginClassLoader classLoader=new SourcePluginClassLoader(this,this.getClass().getClassLoader(),class_file);
+				SourcePluginClassLoader classLoader=new SourcePluginClassLoader(this,this.getClass().getClassLoader(),class_file,dir.getAbsolutePath());
 				this.classLoaders.put(description.getName(),classLoader);
 				File dataFolder=new File(dir.getParentFile(),description.getName());
 				if(dataFolder.exists() && !dataFolder.isDirectory())
